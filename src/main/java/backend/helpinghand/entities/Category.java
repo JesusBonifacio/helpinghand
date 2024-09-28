@@ -1,5 +1,6 @@
 package backend.helpinghand.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +19,7 @@ public class Category {
     private Long id;
     private String category;
 
-    @OneToMany(mappedBy = "categoty", fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
     private List<Campaign> campaigns;
 }

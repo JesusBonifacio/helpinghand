@@ -18,6 +18,7 @@ import java.util.List;
 public class Profile {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
@@ -25,13 +26,8 @@ public class Profile {
     private String email;
     private String address;
     private String phone;
-    private Date birthdate;
+    private String birthdate;
 
-    @JsonIgnore
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "id")
-    private User user;
 
     @JsonIgnore
     @OneToMany(mappedBy = "profile", fetch = FetchType.EAGER)

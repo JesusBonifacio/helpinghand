@@ -18,10 +18,12 @@ public class Comment {
     private String comment_text;
     private String comment_date;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "profile_id")
     private Profile profile;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "campaign_id")
     private Campaign campaign;
