@@ -8,7 +8,7 @@ public class DTOCampaign {
     private Float money_raised;
     private String start_date;
     private String end_date;
-//ola
+
     private Long campaign_id;
     private Long organization_id;
 }

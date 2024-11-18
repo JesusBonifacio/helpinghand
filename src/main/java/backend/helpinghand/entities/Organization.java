@@ -18,10 +18,10 @@ public class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String org_name;
-    private String org_description;
-    private String org_email;
-    private String org_phone;
+    private String orgName;
+    private String orgDescription;
+    private String orgEmail;
+    private String orgPhone;
 
     @JsonIgnore
     @OneToMany(mappedBy = "organization", fetch = FetchType.EAGER)

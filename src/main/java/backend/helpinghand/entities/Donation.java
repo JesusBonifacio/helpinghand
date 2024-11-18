@@ -1,5 +1,6 @@
 package backend.helpinghand.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,11 +19,16 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Float money_amount;
-    private LocalDate donation_date;
+    private String donation_date;
     private String status;
 
 
     @ManyToOne
     @JoinColumn(name = "profile_id")
     private Profile profile;
+
+
+    @ManyToOne
+    @JoinColumn(name ="campaign_id")
+    private Campaign campaign;
 }

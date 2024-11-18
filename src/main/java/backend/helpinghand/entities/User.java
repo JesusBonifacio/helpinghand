@@ -23,9 +23,6 @@ public class User {
     private boolean enabled;
 
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
-    private Profile profile;
 
 
     @JsonIgnore

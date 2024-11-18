@@ -37,7 +37,6 @@ public class AuthorityServiceImpl implements AuthorityService {
         if (authority.getName()==null || authority.getName().isBlank()) {
             throw new InvalidDataException("Authority name can not be blank");
         }
-        //Falta validar que no este repetido!!
         return authorityRepository.save(authority);
     }
 }
